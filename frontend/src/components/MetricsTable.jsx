@@ -34,7 +34,7 @@ export default function MetricsTable({ metrics }) {
                 <div className='flex items-center text-gray-400 text-xs font-light'>VALUE</div>
                 <div className='flex items-center text-gray-400 text-xs font-light'>DATE</div>
             </div>
-            <div className='max-h-96 overflow-y-auto'>
+            <div className='max-h-80 overflow-y-auto'>
                 {metrics.map((metric =>
                     <div key={`${metric.type}-${metric.id}`}className={`mt-2 pl-20 py-1
                         grid grid-cols-3 border border-gray-200 rounded shadow`}
