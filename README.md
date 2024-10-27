@@ -1,7 +1,6 @@
-# metrics
+# Metrics
 
 ## Instructions to run the project locally
-
 
 #### 1. Pull repository
 
@@ -17,14 +16,29 @@ You can copy the contents from `.env.example`
 
 `docker-compose up`
 
-#### 5. Access the UI
+#### 5. Make initial migrations and migrate to db
+
+Access the running backend container: `docker exec -it <your-container-name> bash`
+
+Create migrations: `python manage.py makemigrations`
+
+Migrate to db: `python manage.py migrate`
+
+#### 6. Access the UI
 
 Browse to http://localhost:3000
 
-#### If you wanna use django admin
 
-Access the running backend container: `docker exec -it base-django-react-backend-1 bash`
+## If you wanna access django admin
 
-Create a superuser: `python manage.sh createsuperuser`
+#### 1. Access the running backend container
 
-Access django admin: browse to http://localhost:3000/admin
+`docker exec -it <your-container-name> bash`
+
+#### 2. Once inside the container, create a superuser
+
+Run `python manage.py createsuperuser` and follow the instructions
+
+#### 3. Access django admin
+
+Browse to http://localhost:8000/admin
