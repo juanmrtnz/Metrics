@@ -8,26 +8,22 @@
 
 You can copy the contents from `.env.example`
 
-#### 3. Build the docker image
-
-`docker-compose --build`
-
-#### 4. Run the docker containers
+#### 3. Build and run the docker containers
 
 `docker-compose up`
 
-#### 5. Make initial migrations and migrate to db
+#### 4. Make the initial database migrations to the running backend container
 
-Access the running backend container: `docker exec -it <your-container-name> bash`
+`docker exec -it metrics-backend-1 python manage.py migrate`
 
-Create migrations: `python manage.py makemigrations`
-
-Migrate to db: `python manage.py migrate`
-
-#### 6. Access the UI
+#### 5. Access the UI
 
 Browse to http://localhost:3000
 
+## How the app works
+
+When you have the app running and have accessed the UI, you can add new metrics with the "Create new metrics" form, and these will be added to the "All metrics" list and to the line chart. Averages will be updated too. The metrics list shows the metrics from the selected month in descending order of date (most recent ones first), while the line chart shows the value of each type of metric in its corresponding day of the month.
+When the application is first loaded, metrics will be shown for the current month. If you wanna visualize metrics from other months, you can change it with the select dropdown at the top left of the page.
 
 ## If you wanna access django admin
 
