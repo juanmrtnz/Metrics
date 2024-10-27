@@ -5,6 +5,7 @@ import {
     PointElement, Title, Tooltip, Legend 
 } from 'chart.js';
 
+
 Chart.register(LineElement, CategoryScale, LinearScale, PointElement, Title, Tooltip, Legend);
 
 // Generate an array of days based on the number of days in the month
