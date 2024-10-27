@@ -60,12 +60,21 @@ export default function MetricsLineChart({ visits, sessions, clicks }) {
             legend: { position: 'top' },
         },
         scales: {
+            x: {
+                title: {
+                    display: true,
+                    text: 'Day of month',
+                    color: '#666',
+                    font: { size: 14 },
+                    padding: { top: 5 },
+                },
+            },
             y: { beginAtZero: true },
         },
     };
 
     return (
-        <div className='mb-5'>
+        <div className='mb-2 -mt-3'>
             <Line data={data} options={options} />
         </div>
     );

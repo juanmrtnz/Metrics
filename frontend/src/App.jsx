@@ -57,7 +57,7 @@ export default function App() {
         <>
             <Navbar />
 
-            <div className='ml-10 flex items-center space-x-2 text-gray-500 italic'>
+            <div className='pl-16 flex items-center space-x-2 text-gray-500 italic'>
                 <div>Displaying data from</div>
                 <select
                     value={selectedMonth}
@@ -75,14 +75,14 @@ export default function App() {
             <hr className='mt-3 mb-6 mx-10' />
 
             <div className='flex'>
-                <div className='w-5/12 px-10'>
+                <div className='w-5/12 pl-16 pr-10'>
                     <Header title='Create new metrics' />
                     <CreateMetricForm />
                     <Header title='All metrics' />
                     <MetricsTable metrics={metrics} />
                 </div>
 
-                <div className='w-7/12 px-10'>
+                <div className='w-7/12 pl-10 pr-16'>
                     <Header title='User interaction' />
                     <MetricsLineChart visits={visits} sessions={sessions} clicks={clicks} />
                     <Header title='Averages' />
