@@ -2,19 +2,21 @@
 
 ## Instructions to run the project locally
 
+Make sure you have Docker installed, and local ports 3000 and 8000 are not in use. You can download and install docker from https://www.docker.com/
+
 #### 1. Pull repository
 
 #### 2. Create your `.env` file in the `backend` folder
 
-You can copy the contents from `.env.example`
+You can copy the contents from the `.env.example` file.
 
 #### 3. Build and run the docker containers
 
-`docker-compose up`
+At the project root level, run `docker-compose up`
 
 #### 4. Make the initial database migrations to the running backend container
 
-`docker exec -it metrics-backend-1 python manage.py migrate`
+Now run `docker exec -it metrics-backend-1 python manage.py migrate`
 
 #### 5. Access the UI
 
@@ -27,14 +29,10 @@ When the application is first loaded, metrics will be shown for the current mont
 
 ## If you wanna access django admin
 
-#### 1. Access the running backend container
+#### 1. Create superuser
 
-`docker exec -it <your-container-name> bash`
+Run `docker exec -it metrics-backend-1 python manage.py createsuperuser` and follow the instructions.
 
-#### 2. Once inside the container, create a superuser
-
-Run `python manage.py createsuperuser` and follow the instructions
-
-#### 3. Access django admin
+#### 2. Access django admin
 
 Browse to http://localhost:8000/admin
